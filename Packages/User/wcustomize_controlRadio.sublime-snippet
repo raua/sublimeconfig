@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+
+
+\$wp_customize->add_section("${1:title}_section", array(
+			"title"    => __("${1:title}", "${1:title}_section"),
+			"priority" => 100,
+			"panel" => "${2:panel}"
+		));
+\$wp_customize->add_setting(
+	'${1:title}_setting',
+	array(
+		'default' => '',
+		'transport' => 'postMessage'
+	)
+);
+\$wp_customize->add_control(
+    new WP_Customize_Control(
+        \$wp_customize,
+        '${1:title}_setting',
+        array(
+            'label'          => __( '${1:title}', '${1:title}_label' ),
+            'section'        => '${1:title}_section',
+            'settings'       => '${1:title}_setting',
+            'type'           => 'radio',
+            'choices'        => array(
+                '${2:ArrayItens}'   => __( '${2:ArrayItens}' ),
+                '${2:ArrayItens}'  => __( '${2:ArrayItens}' )
+            )
+        )
+    )
+);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_controlRadio</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

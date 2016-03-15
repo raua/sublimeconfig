@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+<?php foreach(\$cck->get( '${1:$var}' )->value as \$fx){ ?>
+	<img src="<?php echo \$fx->value; ?>" alt="<?php echo \$fx->image_alt; ?>" title ="<?php echo \$fx->image_title; ?>" />
+<?php } ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cckgetx</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

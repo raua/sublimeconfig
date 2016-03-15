@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+wp.customize('${1:header_color}', function (value){
+		value.bind(function(to){
+			\$('.${2:header}').css('color', to);
+		});
+	});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_scriptColor</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

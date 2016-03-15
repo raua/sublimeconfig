@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\$background_image = array(
+'default-color' => '#ffffff'
+);
+
+add_theme_support('custom-background', \$background_image);
+		]]></content>
+		<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+		<tabTrigger>wcustomize_bodybackground</tabTrigger>
+		<!-- Optional: Set a scope to limit where the snippet will trigger -->
+		<scope>source.php</scope>
+	</snippet>

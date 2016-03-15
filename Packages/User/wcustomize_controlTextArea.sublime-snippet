@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+\$wp_customize->add_section("${1:title}_section", array(
+			"title"    => __("${1:title}", "${1:title}_section"),
+			"priority" => 100,
+			"panel" => "${2:panel}"
+		));
+\$wp_customize->add_setting(
+	'${1:title}',
+	array(
+		'default' => '${2:something_or_exclude}',
+		'transport' => 'postMessage'
+	)
+);
+\$wp_customize->add_control(
+    new WP_Customize_Control(
+        \$wp_customize,
+        '${1:title}',
+        array(
+            'label'          => __( 'Entre com ${1:title}', '${1:title}_name' ),
+            'section'        => '${1:title}_section',
+            'settings'       => '${1:title}',
+            'type'           => 'textarea'
+        )
+    )
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_controlTextArea</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,64 @@
+<snippet>
+	<content><![CDATA[
+\$wp_customize->add_section( '${1:logo}_section', array(
+                            'title'    => __( 'Altere o seu logotipo', '${1:logo}_title' ),
+                            'priority' => 20,
+                            'panel'    => '${2:panel}'
+                            ) );
+\$wp_customize->add_setting(
+                            '${1:logo}_text',
+                            array(
+                                  'default' => '',
+                                  'transport' => 'postMessage'
+                                  )
+                            );
+\$wp_customize->add_control(
+                            new WP_Customize_Control(
+                                                     \$wp_customize,
+                                                     '${1:logo}_text',
+                                                     array(
+                                                           'label'          => __( 'Logo em texto', '${1:logo}_label' ),
+                                                           'section'        => '${1:logo}_section',
+                                                           'settings'       => '${1:logo}_text',
+                                                           'type'           => 'text',
+                                                           'priority' => 1
+                                                           )
+                                                     )
+                            );
+
+\$wp_customize->add_setting(
+                            '${1:logo}_color',
+                            array(
+                                  'default' => '',
+                                  'transport' => 'postMessage',
+                                  )
+                            );
+\$wp_customize->add_control(
+                            new WP_Customize_Color_Control(
+                                                           \$wp_customize,
+                                                           '${1:logo}_color',
+                                                           array(
+                                                                 'label'      => __( 'Cor do logotipo em Texto', '${1:logo}_theme' ),
+                                                                 'section'    => '${1:logo}_section',
+                                                                 'settings'   => '${1:logo}_color',
+                                                                 'priority' => 2
+                                                                 ) )
+                            );
+
+\$wp_customize->add_setting( '${1:logo}_img', array(
+                            'default'   => get_template_directory_uri() . '/assets/images/logo.png',
+                            'transport' => 'postMessage'
+                            ) );
+\$wp_customize->add_control( new WP_Customize_Image_Control( \$wp_customize, 'setting_control_logo', array(
+                            'label'    => __( 'Logo como imagem', '${1:logo}_label' ),
+                            'section'  => '${1:logo}_section',
+                            'settings' => '${1:logo}_img',
+                            'context'  => '${1:logo}_context',
+                            'priority' => 3
+                            ) ) );
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wcustomize_controlLogotipo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

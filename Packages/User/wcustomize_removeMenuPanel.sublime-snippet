@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+function remove_customizer_settings( \$wp_customize ){
+
+  \$wp_customize->remove_panel('nav_menus');
+
+}
+add_action( 'customize_register', 'remove_customizer_settings', 20 );
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_removeMenuPanel</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

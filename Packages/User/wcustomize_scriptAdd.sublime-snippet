@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+function agenciadosite_customizer_live_preview() {
+		wp_enqueue_script("agenciadosite", get_template_directory_uri() . "/theme-customizer.js", array(
+			"jquery",
+			"customize-preview"
+		), '', true);
+	}
+add_action("customize_preview_init", "agenciadosite_customizer_live_preview");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_scriptAdd</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+\$wp_customize->add_panel( '${1:panelname}_panel', array(
+	'priority' => 100,
+	'theme_supports' => '',
+	'title' => __('${2:title}', '${1:panelname}_panel'),
+	'description' => __('${3:description}', '${1:panelname}_panel')
+));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_panel</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

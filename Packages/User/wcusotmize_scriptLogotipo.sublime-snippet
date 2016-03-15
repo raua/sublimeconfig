@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+wp.customize('${1:logotipo}_img', function (value) {
+		value.bind(function (to) {
+			if (to == '') {
+
+				\$('.logotipo img').hide();
+			} else {
+				\$('.logotipo img').show();
+				\$('.logotipo img').attr('src', to);
+			}
+		});
+	});
+	wp.customize('${1:logotipo}_color', function (value){
+			value.bind(function(to){
+				\$('.logotipo span').css('color', to);
+			});
+		});
+	wp.customize('${1:logotipo}_text', function (value) {
+		value.bind(function (to) {
+			\$('.logotipo span').text(to);
+		});
+	});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_scriptLogotipo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

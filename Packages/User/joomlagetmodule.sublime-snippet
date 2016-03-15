@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+<?php if (\$this->countModules('${1:var}')) : ?>
+	<div id="${1:var}">
+		<div id="${1:var}-limit">
+			<jdoc:include type="modules" name="<?php \$this->_p('${1:var}') ?>" />
+		</div>
+	</div>
+<?php endif ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>joomlamodule</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

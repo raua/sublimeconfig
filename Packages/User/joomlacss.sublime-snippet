@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+<link rel="stylesheet" href="<?php JURI::base(true) ?>templates/${1:tema}/css/${2:style}.css" type="text/css" />
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>joomlacss</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

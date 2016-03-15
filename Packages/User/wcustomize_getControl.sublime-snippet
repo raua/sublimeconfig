@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$wp_customize->get_control('${1:background_color}')->section = '${2:background_image}';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wcustomize_getControl</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+		<!--<scope>source.php</scope> -->
+</snippet>

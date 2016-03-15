@@ -1,0 +1,49 @@
+<snippet>
+	<content><![CDATA[
+\$wp_customize->add_section('${3:name}_section', array(
+			'title'    => __('${1:title}', 'customize_section_logo'),
+			'priority' => 100,
+			'panel' => '${2:panel}'
+		));
+
+
+\$wp_customize->add_setting(
+	'${3:name}_color',
+	array(
+		'default' => '',
+		'transport' => 'postMessage'
+	)
+);
+\$wp_customize->add_control(
+	new WP_Customize_Color_Control(
+	\$wp_customize,
+	'${3:name}_color',
+	array(
+		'label'      => __( '${1:title}', 'theme_name' ),
+		'section'    => '${3:name}_section',
+		'settings'   => '${3:name}_color',
+	) )
+);
+
+		\$wp_customize->add_setting('${3:name}_img', array(
+			'default'   => get_template_directory_uri() . '/assets/images/${3:name}.png',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_background_image'
+		) );
+		function sanitize_background_image( $filename ) {
+			\$template = get_template_directory_uri();
+			return 'url("' . \$template.'/'. \$filename . '")';
+
+		}
+		\$wp_customize->add_control(new WP_Customize_Image_Control(\$wp_customize, '${3:name}', array(
+			'label'    => __('${1:title}', 'theme_name'),
+			'section'  => '${3:name}_section',
+			'settings' => '${3:name}_img',
+			'context'  => 'theme-${3:name}-context'
+		)));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wcustomize_controlImage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
